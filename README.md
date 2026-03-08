@@ -170,21 +170,16 @@ for the game, as well as configure the emulators to run it.
   Path to the ZEsarUX emulator executable.
 
 * `SPECTRUM_EMULATOR`  
-  Command to run the ZX Spectrum emulator.  
-  The `{tapfile}` placeholder will be replaced by the path to the `.tap` or `.dsk` file.
+  Command to run the ZX Spectrum emulator.
 
 * `CPC_EMULATOR`  
-  Command to run the Amstrad CPC emulator.  
-  `{tapfile}` will be replaced by the path to the `.dsk` file.
+  Command to run the Amstrad CPC emulator.
 
 * `NEXT_EMULATOR`  
-  Command to run the ZX Spectrum Next emulator.  
-  `{tapfile}` will be replaced by the path to the `.tap` file and `{imgdir}`
-  by the directory containing the images.
+  Command to run the ZX Spectrum Next emulator.
 
 * `C64_EMULATOR`  
   Command to run the Commodore 64 emulator.  
-  `{tapfile}` will be replaced by the path to the `.d64` file.
 
 * `MSDOS_EMULATOR`  
   Command to run the MS-DOS emulator.

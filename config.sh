@@ -62,11 +62,12 @@ BUFFERED_IMAGES=""
 # The emulator variables define the command used to run the game
 # after compilation.
 #
-# The placeholder {tapfile} will be replaced by the generated
-# game file (.tap, .dsk, .d64, etc).
+# The placeholder {tapfile} will be replaced automatically by the
+# scripts with the game file (.tap, .dsk, .d64, etc).
 #
-# The placeholder {imgdir} will be replaced by the directory
-# containing the images (used by the Spectrum Next build).
+# The placeholder {imgdir} will be replaced automatically by the
+# scripts with the directory containing the images
+# (used by the ZX Spectrum Next script).
 # --------------------------------------------------
 
 # Path to the ZEsarUX executable (optional)

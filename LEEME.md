@@ -174,19 +174,15 @@ así como configurar los emuladores que se utilizarán para ejecutarlo.
 
 * `SPECTRUM_EMULATOR`  
   Comando utilizado para ejecutar el emulador de ZX Spectrum.
-  El marcador `{tapfile}` será reemplazado por la ruta al archivo `.tap` o `.dsk`.
 
 * `CPC_EMULATOR`  
   Comando utilizado para ejecutar el emulador de Amstrad CPC.
-  `{tapfile}` se reemplaza por la ruta al archivo `.dsk`.
 
 * `NEXT_EMULATOR`  
   Comando utilizado para ejecutar el emulador de ZX Spectrum Next.
-  `{tapfile}` se reemplaza por la ruta al archivo `.tap` y `{imgdir}` por el directorio que contiene las imágenes.
 
 * `C64_EMULATOR`  
   Comando utilizado para ejecutar el emulador de Commodore 64.
-  `{tapfile}` se reemplaza por la ruta al archivo `.d64`.
 
 * `MSDOS_EMULATOR`  
   Comando utilizado para ejecutar el emulador de MS-DOS.
