@@ -90,6 +90,15 @@ ZESARUX_COMMON=(
 # Default configuration uses Fuse
 #SPECTRUM_EMULATOR=(fuse --machine plus2 --tape {tapfile})
 
+# Commodore 64 emulator command (VICE)
+#C64_EMULATOR=(x64sc +drive8truedrive -virtualdev8 +confirmonexit -autostart {tapfile})
+
+# MS-DOS emulator command (DOSBox)
+#MSDOS_EMULATOR=dosbox
+
+# MSX emulator (openmsx)
+#MSX_EMULATOR=(openmsx -machine Philips_NMS_8250 -diska {tapfile} -command "set speed 300")
+
 # If ZEsarUX is available, it can also be used for several platforms
 if [[ -n "${ZESARUX_BIN:-}" ]]; then
     if [[ -z "${SPECTRUM_EMULATOR:-}" ]]; then
@@ -125,12 +134,6 @@ if [[ -n "${ZESARUX_BIN:-}" ]]; then
         {tapfile}
     )
 fi
-
-# Commodore 64 emulator command (VICE)
-#C64_EMULATOR=(x64sc +drive8truedrive -virtualdev8 +confirmonexit -autostart {tapfile})
-
-# MS-DOS emulator command (DOSBox)
-#MSDOS_EMULATOR=dosbox
 
 # --------------------------------------------------
 # Language settings

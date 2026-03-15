@@ -32,18 +32,20 @@ Some external tools used:
  * [MALUVA](https://github.com/Utodev/MALUVA)
  * [ZX0](https://github.com/einar-saukas/ZX0)
  * [CPCXfs](https://www.octoate.de/download/cpcxfs/)
+ * [DSKTOOL](https://github.com/lvitals/dsktool)
 
 ## Dependencies
 
-In order to run the scripts, PHP must be installed.
-To generate HTML games, the `php-gd` extension is also required.
+* In order to run the scripts, **PHP** must be installed.
+  To generate HTML games, the **php-gd** extension is also required.
 
-If you want to create a game for Commodore 64, you must install
-the VICE emulator, since the scripts use one of its utilities
-to create the game disk.
+* If you want to create a game for Commodore 64, you must install
+  the **VICE** emulator, since the scripts use one of its utilities
+  to create the game disk.
+
+* For MSX2, **Python 3** with the **NumPy** library is also required.
 
 You will also need several emulators if you want to test your game.
-
 The emulators to be used can be configured in the `config.sh` file.
 
 ### Recommended emulators
@@ -55,6 +57,8 @@ and install the ROMs for the machines).
 - [Fuse](https://fuse-emulator.sourceforge.net), an emulator for ZX Spectrum machines.
 - [Vice](https://vice-emu.sourceforge.io), an emulator for Commodore machines.
 - [Dosbox](https://www.dosbox.com), an MS-DOS emulator.
+- [OpenMSX](https://openmsx.org), an emulator for MSX1 and MSX2.
+  It requires the ROMs `nms8250_basic-bios2.rom`, `nms8250_disk.rom`, and `nms8250_msx2sub.rom`.
 - [ZEsarUX](https://github.com/chernandezba/zesarux), emulates several machines,
   including traditional ZX Spectrum models, the newer ZX Spectrum Next,
   and others such as the Amstrad CPC 6128.
@@ -69,6 +73,8 @@ Currently, Mini DAAD Linux can compile games for the following platforms:
 - ZX Spectrum Next
 - Amstrad CPC 6128
 - Commodore 64
+- MSX 1
+- MSX 2
 - MS-DOS
 - HTML (playable in web browsers)
 
@@ -96,6 +102,8 @@ The procedure to compile a game for a specific machine is as follows:
     | `zxnext.sh`        | ZX Spectrum Next   |
     | `c64.sh`           | Commodore 64       |
     | `cpc6128.sh`       | Amstrad CPC 6128   |
+    | `msx1.sh`          | MSX 1             |
+    | `msx2.sh`          | MSX 2             |
     | `msdos.sh`         | MS-DOS             |
     | `html.sh`          | HTML               |
 
@@ -116,6 +124,8 @@ Images for each platform must be placed in the following directories:
 | ZX Spectrum Next          | `.pcx`       | 256x192    | `IMAGES`          |
 | Commodore 64 (HiRes)      | `.art`       | 320x200    | `IMAGES`          |
 | Commodore 64 (Multicolor) | `.koa`       | 160x200    | `IMAGES`          |
+| MSX 1                     | `.sc2`       | 256x192    | `IMAGES`          |
+| MSX 2                     | `.sc8`       | 256x212    | `IMAGES`          |
 | MS-DOS (VGA)              | `.pcx`       | 320x200    | `IMAGES/PC`       |
 | MS-DOS (SVGA)             | `.pcx`       | 640x400    | `IMAGES/PC/SVGA`  |
 | HTML                      | `.png`       | 320x200    | `IMAGES/HTML`     |
@@ -183,3 +193,6 @@ for the game, as well as configure the emulators to run it.
 
 * `MSDOS_EMULATOR`  
   Command to run the MS-DOS emulator.
+
+* `MSX_EMULATOR`..
+  Command to run the MSX 1 and MSX 2 emulator.

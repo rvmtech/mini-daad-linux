@@ -2,10 +2,10 @@
 .gitattributes      export-ignore
 **/.gitkeep         export-ignore
 scripts/updatedr.sh export-ignore
+src                 export-ignore
 ASSETS/AMIGA        export-ignore
 ASSETS/ATARIST      export-ignore
 ASSETS/CP4          export-ignore
-ASSETS/MSX          export-ignore
 ASSETS/PCW          export-ignore
 ASSETS/WINDOWS      export-ignore
 ASSETS/ZX/ESXDOS    export-ignore

@@ -5,7 +5,7 @@
 
 shopt -s nullglob
 
-APPVERSION=0.5.0
+APPVERSION=0.5.1
 
 intro() {
     cecho 6 "==============================="
@@ -90,6 +90,7 @@ clean() {
     rm -f DAAD.SCR
     rm -f sdi
     rm -f edi
+    rm -f *.mdg
 }
 
 create_zx_sdg() {
@@ -145,6 +146,18 @@ set_interpreter() {
             cp ASSETS/CPC/DCPCIEF.BIN DCPC.BIN
         fi
     fi
+
+    if [ "$mode" = "msx1" ]; then
+        if [ "$BASELANG" == "ES" ]; then
+            cp ASSETS/MSX/MSX1/DMSXISF.BIN DAAD.Z80
+        else
+            cp ASSETS/MSX/MSX1/DMSXIEF.BIN DAAD.Z80
+        fi
+    fi
+
+    if [ "$mode" = "msx2" ]; then
+        cp ASSETS/MSX/MSX2/msx2daad_1.5.1_${BASELANG}_SC8.com msx2daad.com
+    fi
 }
 
 image_output() {
@@ -194,6 +207,31 @@ prepare_images() {
         for i in *.scr; do
             base=$(basename "$i" .scr)
             ../../TOOLS/MALUVA/sc2daad cpc "$i" "$base.cpc" "$IMGLINES"
+        done
+    )
+    fi
+
+    if [ "$mode" = "msx1" ]; then
+    (
+        cd IMAGES
+        for i in *.sc2; do
+            base=$(basename "$i" .sc2)
+            ../TOOLS/MALUVA/sc2daad msx "$i" "$base.ms2" "$IMGLINES"
+        done
+    )
+    fi
+
+    if [ "$mode" = "msx2" ]; then
+    (
+        cd IMAGES
+        for i in *.sc8; do
+            if [ "$i" = "daad.sc8" ]; then
+                ../scripts/imgwizard.py c "$i" 212 RLE
+                mv daad.im8 loading.im8
+            else
+                base=$(basename "$i" .sc8)
+                ../scripts/imgwizard.py c "$i" "$IMGLINES" RLE
+            fi
         done
     )
     fi

@@ -29,12 +29,19 @@ rm IMAGES/*.art
 rm IMAGES/*.koa
 rm IMAGES/*64
 
+rm IMAGES/*.sc2
+rm IMAGES/*.ms2
+
+rm IMAGES/*.sc8
+rm IMAGES/*.im8
+
 rm SOUNDS/*.wav
 rm SOUNDS/*.mp3
 rm SOUNDS/*.sfx
 
 rm RELEASE/CPC/*.dsk
 rm RELEASE/C64/*.d64
+rm RELEASE/MSX1/*.dsk
 
 rm RELEASE/MSDOS/*.sh
 rm RELEASE/MSDOS/*.bat

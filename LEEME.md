@@ -34,18 +34,20 @@ Algunas herramientas externas utilizadas:
  * [MALUVA](https://github.com/Utodev/MALUVA)
  * [ZX0](https://github.com/einar-saukas/ZX0)
  * [CPCXfs](https://www.octoate.de/download/cpcxfs/)
+ * [DSKTOOL](https://github.com/lvitals/dsktool)
 
 ## Dependencias
 
-Para poder ejecutar los scripts es necesario tener instalado PHP.
-Para generar juegos en HTML, también se requiere la extensión `php-gd`.
+* Para poder ejecutar los scripts es necesario tener instalado **PHP**.
+  Para generar juegos en HTML, también se requiere la extensión **php-gd**.
 
-Si quieres crear un juego para Commodore 64 necesitas instalar el
-emulador Vice, ya que los scripts usan una utilidad suya para
-crear el disco del juego.
+* Si quieres crear un juego para Commodore 64 necesitas instalar el
+  emulador **Vice**, ya que los scripts usan una utilidad suya para
+  crear el disco del juego.
+
+* Para MSX 2 hace falta además **Python 3**, con la librería **NumPy**.
 
 Además harán falta varios emuladores si quieres probar tu juego.
-
 En el fichero `config.sh` puedes configurar los emuladores a usar.
 
 ### Emuladores recomendados
@@ -57,6 +59,8 @@ tengas que buscar e instalar las ROMs de las máquinas).
   - [Fuse](https://fuse-emulator.sourceforge.net), es un emulador de máquinas ZX Spectrum.
   - [Vice](https://vice-emu.sourceforge.io), emulador de máquinas Commodore.
   - [Dosbox](https://www.dosbox.com), emulador de MS-DOS.
+  - [OpenMSX](https://openmsx.org), emulador de MSX 1 y MSX 2.
+    Necesita las roms `nms8250_basic-bios2.rom`, `nms8250_disk.rom` y `nms8250_msx2sub.rom`.
   - [ZEsarUX](https://github.com/chernandezba/zesarux), emula
     varias máquinas, incluyendo los ZX Spectrum tradicionales y el
     nuevo ZX Spectrum Next, y otros como Amstrad CPC 6128.
@@ -72,6 +76,8 @@ plataformas:
   - ZX Spectrum Next
   - Amstrad CPC 6128
   - Commodore 64
+  - MSX 1
+  - MSX 2
   - MS-DOS
   - HTML (se puede jugar en navegadores web)
 
@@ -98,6 +104,8 @@ siguiente:
     | `zxnext.sh`        | ZX Spectrum Next  |
     | `c64.sh`           | Commodore 64      |
     | `cpc6128.sh`       | Amstrad CPC 6128  |
+    | `msx1.sh`          | MSX 1             |
+    | `msx2.sh`          | MSX 2             |
     | `msdos.sh`         | MS-DOS            |
     | `html.sh`          | HTML              |
 
@@ -117,7 +125,9 @@ Las imágenes para cada plataforma deben estar en las siguientes carpetas:
 | Amstrad CPC (modo 1)      | `.scr`/`.pal` |   320x200      | `IMAGES/CPC`     |
 | ZX Spectrum Next          | `.pcx`        |   256x192      | `IMAGES`         |
 | Commodore 64 (HiRes)      | `.art`        |   320x200      | `IMAGES`         |
-| Commodore 64 (Multicolor) |  `.koa`       |   160x200      | `IMAGES`         |
+| Commodore 64 (Multicolor) | `.koa`        |   160x200      | `IMAGES`         |
+| MSX 1                     | `.sc2`        |   256x192      | `IMAGES`         |
+| MSX 2                     | `.sc8`        |   256x212      | `IMAGES`         |
 | MS-DOS (VGA)              | `.pcx`        |   320x200      | `IMAGES/PC`      |
 | MS-DOS (SVGA)             | `.pcx`        |   640x400      | `IMAGES/PC/SVGA` |
 | HTML                      | `.png`        |   320x200      | `IMAGES/HTML`    |
@@ -186,3 +196,6 @@ así como configurar los emuladores que se utilizarán para ejecutarlo.
 
 * `MSDOS_EMULATOR`  
   Comando utilizado para ejecutar el emulador de MS-DOS.
+
+* `MSX_EMULATOR`..
+  Comando utilizado para ejecutar el emulador de MSX 1 y MSX 2.
